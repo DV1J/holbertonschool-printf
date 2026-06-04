@@ -23,15 +23,23 @@ int _printf(const char *format, ...)
 			{
 				_putchar(va_arg(args, int));
 				char_printed++;
+			}
 				if (format[i] == 's')
 				{
 					str = va_arg(args, char *);
 					if (str == NULL)
 						return (-1);
 				}
-			}
+
+					if (format[i] == '%')
+					{
+						_putchar(format[i]);
+						char_printed += _putchar(format[i]);
+						char_printed++;
+						i++;
+					}
 		}
 	}
+	va_end(args);
 	return (char_printed);
 }
-
