@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ *_printf - function that produces output according to a format.
+ *@format: check for format character
+ *Return:NULL || Num of characters
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -10,22 +14,22 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	va_start(args,format);
+	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%' && format[i + 1])
-			i++;
-		if (format[i] == 'c')
-		{
-			_putchar(va_arg(args,int));
-			char_printed++;
-		}
-
-		else if (format[i] == 's')
-		{
-			str = va_arg(args, char *);
-				if (str == NULL)
-					return (-1);
+		{	i++;
+			if (format[i] == 'c')
+			{
+				_putchar(va_arg(args, int));
+				char_printed++;
+				if (format[i] == 's')
+				{
+					str = va_arg(args, char *);
+					if (str == NULL)
+						return (-1);
+				}
+			}
 		}
 	}
 	return (char_printed);
