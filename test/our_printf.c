@@ -17,9 +17,13 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%' && format[i + 1])
+		if (format[i] == '%')
 		{
 			i++;
+			
+			if(format[i] == '\0')
+				return (-1);
+
 			if (format[i] == 'c')
 			{
 				_putchar(va_arg(args, int));
