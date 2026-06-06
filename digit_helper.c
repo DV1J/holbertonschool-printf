@@ -22,7 +22,7 @@ int print_number(int num)
 		div *= 10;
 	while (div > 0)
 	{
-		_putchar((n / div) + '0');
+		character_printed += _putchar((n / div) + '0');
 		n %= div;
 		div /= 10;
 	}
