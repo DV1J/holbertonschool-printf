@@ -20,22 +20,22 @@ This is a custom version of the "printf" function from the C library. Our projec
 
 ## Prototype
 
-* int _printf(const char *formet, ...);
+* int _printf(const char *format, ...);
 
 ## How our_printf.c file works
 
 The function goes through the format string one character at a time.
 When the function finds a "%" it looks at the rest of the string for special characters.
 
-### Special characters & what happends wheb they are found
+### Special characters & what happens when they are found
 
 * c - the function prints out a Char character
 * s - the function prints out a string
 * d / i - the function prints out digits
 * %% - if only a "%" is found the function will print "%"
 
-if non of the special characters are found like for example "%x"
-the funtion will print out "%x" instead of the value it represents.
+If non of the special characters are found like for example "%x"
+the function will print out "%x" instead of the value it represents.
 At the end the function returns the number of characters printed.
 
 ## Installation & Compilation
@@ -49,12 +49,12 @@ How to compile the code:
 
  gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c test/*.c -I.
 
- who it works
+ How  it works
 
  * -Wno-format - tells the compiler to turn off all warnings about format strings 
  * "*.c" - tells the compiler to compile for all files that ends with .c
  * test/*.c - tells compiler to also take the files that end with .c in the test directory
- * -I. - tells the comipler to where to look for the header file and the "." at the end tells it to look in the current directory
+ * -I. - tells the compiler to where to look for the header file and the "." at the end tells it to look in the current directory
 ## Authors
 
  * Dvij Purmanund - https://github.com/DV1J
